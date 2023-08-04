@@ -1,11 +1,19 @@
-import { NativeBaseProvider, Text, Box } from "native-base";
+import { NativeBaseProvider, Text, Box, Spinner } from "native-base";
+import {useFonts, Karla_400Regular, Karla_700Bold} from '@expo-google-fonts/karla'
+import { StatusBar } from 'react-native';
 
+import { THEME } from './src/theme';
+import { SignIn } from "./src/pages/SignIn";
 export default function App() {
+  const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
   return (
-    <NativeBaseProvider>
-    <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-      <Text>Native base open!</Text>
-    </Box>
+    <NativeBaseProvider theme={THEME}>
+      <StatusBar 
+      barStyle='light-content'
+      backgroundColor='transparent'
+      translucent
+      />
+      {fontsLoaded ? <SignIn/> : <Spinner />}
   </NativeBaseProvider>
   );
 }
