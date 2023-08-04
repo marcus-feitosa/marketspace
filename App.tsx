@@ -9,7 +9,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
   return (
   
-      <NativeBaseProvider theme={THEME}>
+      <NativeBaseProvider theme={THEME} >
         <SafeAreaView>
           <StatusBar 
           barStyle='light-content'
