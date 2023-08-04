@@ -1,9 +1,11 @@
-import { Center, Text } from "native-base";
+import { Center, Text, VStack } from "native-base";
 
 export function SignIn(){
     return(
         <Center>
-            <Text>SignIn</Text>
+            <VStack>
+                
+            </VStack>
         </Center>
         
     )
