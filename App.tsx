@@ -3,7 +3,7 @@ import {useFonts, Karla_400Regular, Karla_700Bold} from '@expo-google-fonts/karl
 import { StatusBar } from 'react-native';
 
 import { THEME } from './src/theme';
-import { Login } from "./src/pages/Login";
+import { SignIn } from "./src/pages/SignIn";
 import { SafeAreaView } from "react-native-safe-area-context";
 export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
@@ -17,7 +17,7 @@ export default function App() {
           translucent
           />
         </SafeAreaView>
-        {fontsLoaded ? <Login/> : <Spinner />}
+        {fontsLoaded ? <SignIn/> : <Spinner />}
       </NativeBaseProvider>
  
   );
