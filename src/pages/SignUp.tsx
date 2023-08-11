@@ -5,7 +5,7 @@ import {Input} from '../components/FormInput'
 import { Button } from "../components/Button";
 export function SignUp(){
     return(
-        <Box flex={1}  bgColor="gray.100">
+        <Box flex={1}>
             <ScrollView>
                 <VStack>
                 <Center>

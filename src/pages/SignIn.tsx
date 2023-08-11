@@ -1,11 +1,21 @@
 import { Center, Image, Text, VStack, Box } from "native-base";
 import LogoIMG from '../assets/logo.png'
 
+
+import {useNavigation} from '@react-navigation/native'
+import {AuthNavigatorRoutesProps} from '../routes/auth.routes'
+
 import {Input} from '../components/FormInput'
 import { Button } from "../components/Button";
+
 export function SignIn(){
+    const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
+    function handleNewAccount(){
+        navigation.navigate('signUp')
+    }
     return(
-        <Box flex={1}  bgColor="gray.100">
+        <Box flex={1}>
             <VStack>
                 <Center>
                     <Image source={LogoIMG}/>
@@ -22,7 +32,7 @@ export function SignIn(){
 
                 <Center mt={24} p={6} bgColor='white'>
                     <Text mb={2}>Ainda não tem acesso?</Text>
-                    <Button text="Criar uma conta" color="gray.200"/>
+                    <Button text="Criar uma conta" color="gray.200" onPress={handleNewAccount}/>
                 </Center>
 
 

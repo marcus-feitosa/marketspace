@@ -1,23 +1,24 @@
-import { NativeBaseProvider, Text, Box, Spinner } from "native-base";
+import { NativeBaseProvider, Spinner } from "native-base";
 import {useFonts, Karla_400Regular, Karla_700Bold} from '@expo-google-fonts/karla'
-import { StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 
 import { THEME } from './src/theme';
-import { SignUp } from "./src/pages/SignUp";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Routes } from "./src/routes";
+
 export default function App() {
   const [fontsLoaded] = useFonts({Karla_400Regular, Karla_700Bold})
   return (
   
       <NativeBaseProvider theme={THEME} >
-        <SafeAreaView>
+     
           <StatusBar 
           barStyle='light-content'
           backgroundColor='transparent'
           translucent
           />
-        </SafeAreaView>
-        {fontsLoaded ? <SignUp/> : <Spinner />}
+          
+      
+        {fontsLoaded ? <Routes/> : <Spinner />}
       </NativeBaseProvider>
  
   );
