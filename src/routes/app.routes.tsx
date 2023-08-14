@@ -1,42 +1,35 @@
-import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-
-import { Catalog } from '../pages/Catalog';
+import {createNativeStackNavigator, NativeStackNavigationProp}from '@react-navigation/native-stack'
 import { Product } from '../pages/Product';
 import { CreateProduct } from '../pages/CreateProduct';
 import { EditProduct } from '../pages/EditProduct';
-import { MyProduct } from '../pages/MyProduct';
+
 import { MyProductDetails } from '../pages/MyProductDetails';
-
+import { Text } from 'native-base';
 import { ProductPreview } from '../pages/ProductPreview';
+import { ProductRoutes } from './product.routes';
 
-type AppRoutes = {
-    catalog: undefined;
-    myproduct: undefined;
+
+type AuthRoutes ={
+    home: undefined,
     product: undefined;
-    createproduct: undefined;
-    editproduct:undefined;
-    myproductdetails: undefined;
-    productpreview: undefined;
-  }
-  
-  export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>;
-  
-  const { Navigator, Screen } = createBottomTabNavigator<AppRoutes>();
+    createproduct : undefined;
+    editproduct : undefined;
+    myproductdetails : undefined;
+    productpreview : undefined;
 
-export function AppRoutes() {
-  return (
-    <Navigator>
-      <Screen 
-        name='catalog'
-        component={Catalog}
+}
+
+export type AuthNavigatorRoutesProps = NativeStackNavigationProp<AuthRoutes>;
+
+const {Navigator, Screen} = createNativeStackNavigator<AuthRoutes>();
+export function AppRoutes(){
+return(
+    <Navigator screenOptions={{headerShown:false}}>
+       <Screen 
+        name='home'
+        component={ProductRoutes}
       />
-
-      <Screen 
-        name='myproduct'
-        component={MyProduct}
-      />
-
-      <Screen 
+        <Screen 
         name='product'
         component={Product}
       />
@@ -44,6 +37,7 @@ export function AppRoutes() {
       <Screen 
         name='createproduct'
         component={CreateProduct}
+
       />
       <Screen 
         name='editproduct'
@@ -58,5 +52,5 @@ export function AppRoutes() {
         component={ProductPreview}
       />
     </Navigator>
-  );
+)
 }
