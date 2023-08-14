@@ -1,5 +1,6 @@
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native'
 import { AuthRoutes } from './auth.routes'
+import { AppRoutes } from './app.routes'
 import { useTheme, Box } from 'native-base';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -13,7 +14,7 @@ export function Routes(){
             
                 <NavigationContainer>
             
-                    <AuthRoutes />
+                    <AppRoutes />
                
                 </NavigationContainer>
             

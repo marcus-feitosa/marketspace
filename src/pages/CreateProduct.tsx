@@ -1,7 +1,10 @@
-import { Text } from "native-base";
+import { Text, Center } from "native-base";
 
 export function CreateProduct(){
     return(
-        <Text>Create Product</Text>
+        
+        <Center flex={1}>
+            <Text>Create Product</Text>
+        </Center>
     )
 }
